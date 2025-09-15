@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>io.github.emays</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1</version>
+		<relativePath />
+	</parent>
+
+	<artifactId>util</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Utilities</name>
+	<description>Common utilities</description>
+	<url>https://github.com/emays/util</url>
+	<inceptionYear>2007</inceptionYear>
+	<organization>
+		<name>Mays Systems LLC</name>
+	</organization>
+	<licenses>
+		<license>
+			<name>Apache-2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Eric Mays</name>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>https://www.github.com/emays/util</connection>
+		<developerConnection>scm:git:https://www.github.com/emays/util</developerConnection>
+		<url>https://www.github.com/emays/util</url>
+		<tag>HEAD</tag>
+	</scm>
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub Packages</name>
+			<url>https://maven.pkg.github.com/emays/util</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencies>
+		<!-- test dependencies -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- logging dependencies -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+		</dependency>
+		<!-- other deoendencies -->
+		<dependency>
+			<groupId>org.dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jaxen</groupId>
+			<artifactId>jaxen</artifactId>
+		</dependency>
+	</dependencies>
+</project>
