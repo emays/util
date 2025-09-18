@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>util</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 
 	<name>Utilities</name>
 	<description>Common utilities</description>
@@ -36,7 +36,7 @@
 		<connection>https://www.github.com/emays/util</connection>
 		<developerConnection>scm:git:https://www.github.com/emays/util</developerConnection>
 		<url>https://www.github.com/emays/util</url>
-		<tag>util-0.0.1</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<distributionManagement>
 		<repository>
