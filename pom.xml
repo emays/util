@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>io.github.emays</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.1</version>
+		<version>0.0.2</version>
 		<relativePath />
 	</parent>
 
@@ -72,4 +72,17 @@
 			<artifactId>jaxen</artifactId>
 		</dependency>
 	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>github-packages</id>
+			<distributionManagement>
+				<repository>
+					<id>github</id>
+					<name>GitHub Packages</name>
+					<url>https://maven.pkg.github.com/emays/util</url>
+				</repository>
+			</distributionManagement>
+		</profile>
+	</profiles>
 </project>

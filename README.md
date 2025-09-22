@@ -1,6 +1,10 @@
-## Common Utilties
+# Common Utilties
+
+[![Build](https://github.com/emays/util/actions/workflows/maven.yml/badge.svg)](https://github.com/emays/util/actions/workflows/maven.yml)
 
 Common utility classes
+
+Available at [Maven Central](https://central.sonatype.com/artifact/io.github.emays/util)
 
 ## License
 
