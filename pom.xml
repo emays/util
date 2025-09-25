@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>io.github.emays</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.2</version>
+		<version>0.0.3</version>
 		<relativePath />
 	</parent>
 
@@ -38,13 +38,6 @@
 		<url>https://www.github.com/emays/util</url>
 		<tag>HEAD</tag>
 	</scm>
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/emays/util</url>
-		</repository>
-	</distributionManagement>
 
 	<dependencies>
 		<!-- test dependencies -->
