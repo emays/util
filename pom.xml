@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>io.github.emays</groupId>
 		<artifactId>parent</artifactId>
-		<version>0.0.3</version>
+		<version>0.0.5-SNAPSHOT</version>
 		<relativePath />
 	</parent>
 
@@ -76,6 +76,22 @@
 					<url>https://maven.pkg.github.com/emays/util</url>
 				</repository>
 			</distributionManagement>
+		</profile>
+		<profile>
+			<id>github-repo</id>
+			<repositories>
+				<repository>
+					<id>github-parent</id>
+					<url>https://maven.pkg.github.com/emays/parent</url>
+					<releases>
+						<enabled>false</enabled>
+					</releases>
+					<snapshots>
+						<enabled>true</enabled>
+						<!--<updatePolicy>always</updatePolicy>-->
+					</snapshots>
+				</repository>
+			</repositories>
 		</profile>
 	</profiles>
 </project>
