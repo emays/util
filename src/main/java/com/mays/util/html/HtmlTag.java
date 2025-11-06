@@ -5,15 +5,19 @@ import java.util.List;
 
 public enum HtmlTag {
 
-	HEAD, TITLE, LINK, SCRIPT,
+	HEAD, TITLE, LINK, SCRIPT, STYLE,
 	//
-	BODY, A, B, BR, DIV, P,
+	BODY, A, P, B, BR, DIV, SPAN,
+	//
+	H1, H2, H3, H4, H5, H6,
 	//
 	TABLE, TBODY, TH, TD, TR, CAPTION,
 	//
-	DEL, INS, HR, SPAN, UL, LI,
+	DEL, INS, HR, UL, LI,
 	//
-	BUTTON, PRE,
+	PRE,
+	//
+	FORM, INPUT, TEXTAREA, BUTTON, SELECT, OPTION, OPTGROUP, FIELDSET, LABEL, OUTPUT,
 	//
 	IMG;
 
