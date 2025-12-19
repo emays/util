@@ -11,6 +11,9 @@ import org.dom4j.io.OutputFormat;
 
 public class HtmlUtil {
 
+	private HtmlUtil() {
+	}
+
 	public static void write(Document document, Path file) throws IOException {
 		OutputFormat format = OutputFormat.createPrettyPrint();
 		format.setTrimText(false);
@@ -20,7 +23,7 @@ public class HtmlUtil {
 		writer.write(document);
 		writer.close();
 	}
-	
+
 	public static String write(Document document) throws IOException {
 		OutputFormat format = OutputFormat.createPrettyPrint();
 		format.setTrimText(false);

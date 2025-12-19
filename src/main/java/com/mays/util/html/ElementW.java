@@ -16,7 +16,7 @@ public class ElementW {
 
 	/**
 	 * Creates a new {@code ElementW} wrapping the given element
-	 * 
+	 *
 	 * @param element is the {@code Element} to wrap
 	 * @return the new {@code ElementW}
 	 */
@@ -26,17 +26,16 @@ public class ElementW {
 
 	/**
 	 * Constructs a new {@code ElementW} wrapping the given element
-	 * 
+	 *
 	 * @param element is the {@code Element} to wrap
 	 */
 	public ElementW(Element element) {
-		super();
 		this.element = element;
 	}
 
 	/**
 	 * Access the wrapped {@code Element}
-	 * 
+	 *
 	 * @return the wrapped {@code Element}
 	 */
 	public Element getElement() {
@@ -68,11 +67,11 @@ public class ElementW {
 	 * Adds a new {@code ElementW} node with a name of the given HtmlTag tag to this
 	 * element and returns the new node. Adds an attribute to the new node for each
 	 * name and value in attributes.
-	 * 
+	 *
 	 * <p>
 	 * <blockquote> addElement(HtmlTag.DIV, "id", "div1", "style", "font: 10pt
 	 * sans-serif;") </blockquote>
-	 * 
+	 *
 	 * @param tag        is the HtmlTag name for the {@code ElementW} node
 	 * @param attributes is a sequence of attribute name and value
 	 * @return the newly added {@code ElementW} node
@@ -87,7 +86,7 @@ public class ElementW {
 	 * Adds a new {@code ElementW} node with the given name to this element and
 	 * returns the new node. Adds an attribute to the new node for each name and
 	 * value in attributes.
-	 * 
+	 *
 	 * <p>
 	 * <blockquote> addElement("div", "id", "div1", "style", "font: 10pt
 	 * sans-serif;") </blockquote>
@@ -140,7 +139,7 @@ public class ElementW {
 	/**
 	 * Appends the value to the class attribute of this {@code ElementW} creating a
 	 * new attribute if one doesn't already exist
-	 * 
+	 *
 	 * @param value is the value of the class attribute to append or set
 	 * @return this {@code ElementW}
 	 */
@@ -255,16 +254,6 @@ public class ElementW {
 				return el_el;
 		}
 		return null;
-	}
-
-	@Deprecated
-	public ElementW addDiv(String div_class) {
-		return addElement(HtmlTag.DIV, "class", div_class);
-	}
-
-	@Deprecated
-	public ElementW addDiv(String div_class, String text) {
-		return addDiv(div_class).addText(text);
 	}
 
 	/**

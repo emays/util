@@ -3,6 +3,7 @@ package com.mays.util.xml;
 import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.MissingResourceException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,10 +23,10 @@ public class XmlResourceResolver implements LSResourceResolver {
 	@Override
 	public LSInput resolveResource(String type, String namespaceURI, String publicId, String systemId, String baseURI) {
 		Path path = Paths.get(basePath, systemId);
-		logger.info("Resolve resource: " + path.toString());
+		logger.info("Resolve resource: " + path);
 		InputStream resource = this.getClass().getClassLoader().getResourceAsStream(path.toString());
 		if (resource == null)
-			throw new RuntimeException("Could not find the specified xsd file: " + basePath + " " + systemId);
+			throw new MissingResourceException("Could not find the specified xsd file", basePath, systemId);
 		return new XmlLSInputImpl(publicId, systemId, baseURI, resource, "UTF-8");
 	}
 

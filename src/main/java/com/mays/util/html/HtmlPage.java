@@ -1,10 +1,12 @@
 package com.mays.util.html;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.dom4j.Document;
+import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
@@ -29,13 +31,13 @@ public class HtmlPage {
 		element = addBody(stylesheet, script);
 	}
 
-	public HtmlPage(Path path) throws Exception {
+	public HtmlPage(Path path) throws DocumentException {
 		SAXReader reader = new SAXReader();
 		document = reader.read(path.toString());
 		element = new ElementW(document.getRootElement());
 	}
 
-	public HtmlPage(InputStream stream) throws Exception {
+	public HtmlPage(InputStream stream) throws DocumentException {
 		SAXReader reader = new SAXReader();
 		document = reader.read(stream);
 		element = new ElementW(document.getRootElement());
@@ -86,7 +88,7 @@ public class HtmlPage {
 		return new ElementW(html.addElement("body"));
 	}
 
-	public void write(String outdir) throws Exception {
+	public void write(String outdir) throws IOException {
 		HtmlUtil.write(document, Paths.get(outdir, name + ".html"));
 	}
 

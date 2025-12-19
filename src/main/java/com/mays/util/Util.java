@@ -16,11 +16,14 @@ import java.util.stream.Stream;
 
 public class Util {
 
+	private Util() {
+	}
+
 	public static PrintWriter newPrintWriter(Path path) throws IOException {
 		return new PrintWriter(Files.newBufferedWriter(path));
 	}
 
-	public static void trFile(String fr, String to, String in_file, String out_file) throws Exception {
+	public static void trFile(String fr, String to, String in_file, String out_file) throws IOException  {
 		Stream<String> lines = Files.lines(Paths.get(in_file)).map(line -> line.replace(fr, to));
 		Files.write(Paths.get(out_file), iterable(lines));
 	}
@@ -47,10 +50,6 @@ public class Util {
 	}
 
 	public static String delimitedString(String delim, List<String> fields) {
-//		if (fields.size() == 1)
-//			return "" + fields.get(0);
-//		return (String) fields.subList(1, fields.size()).stream().reduce(fields.get(0).toString(),
-//				(partial, field) -> partial + delim + field.toString());
 		return String.join(delim, fields);
 	}
 
@@ -62,7 +61,7 @@ public class Util {
 		ArrayList<String> list = new ArrayList<>();
 		Arrays.stream(fields).forEach(field -> {
 			if (field == null)
-				throw new RuntimeException(list.toString());
+				throw new IllegalArgumentException(list.toString());
 			list.add(field.toString());
 		});
 		return delimitedString(delim, list);
