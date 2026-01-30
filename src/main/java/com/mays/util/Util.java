@@ -1,6 +1,7 @@
 package com.mays.util;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -48,8 +49,10 @@ public class Util {
 		return iterable(Files.lines(path));
 	}
 
-	public static Stream<String> getResourceLines(String resource) {
+	public static Stream<String> getResourceLines(String resource) throws FileNotFoundException {
 		InputStream stream = Util.class.getResourceAsStream(resource);
+		if (stream == null)
+			throw new FileNotFoundException(resource);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 		return reader.lines();
 	}
