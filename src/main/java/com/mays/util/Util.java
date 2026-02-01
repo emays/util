@@ -1,6 +1,10 @@
 package com.mays.util;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -23,7 +27,7 @@ public class Util {
 		return new PrintWriter(Files.newBufferedWriter(path));
 	}
 
-	public static void trFile(String fr, String to, String in_file, String out_file) throws IOException  {
+	public static void trFile(String fr, String to, String in_file, String out_file) throws IOException {
 		Stream<String> lines = Files.lines(Paths.get(in_file)).map(line -> line.replace(fr, to));
 		Files.write(Paths.get(out_file), iterable(lines));
 	}
@@ -43,6 +47,14 @@ public class Util {
 
 	public static Iterable<String> lines(Path path) throws IOException {
 		return iterable(Files.lines(path));
+	}
+
+	public static Stream<String> getResourceLines(String resource) throws FileNotFoundException {
+		InputStream stream = Util.class.getResourceAsStream(resource);
+		if (stream == null)
+			throw new FileNotFoundException(resource);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+		return reader.lines();
 	}
 
 	public static String tabDelimitedString(List<String> fields) {
